@@ -6,20 +6,26 @@ int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
 
-    int n, m, cnt = 0;
-    string s, c, t;
+    int n, m, cnt = 0, cnt2 = 0;
+    string s;
+    char t = 'O';
 
     cin >> n >> m >> s;
-    for(int i = 0; i < n + n + 1; i++) {
-        if(i % 2 == 0)
-            c += 'I';
-        else
-            c += 'O';
-    }
     for(int i = 0; i < m; i++) {
-        t = s.substr(i, n + n + 1);
-        if(t == c)
+        if(s[i] != t) {
+            t = s[i];
             cnt++;
+            if(cnt >= n + n + 1 && (cnt - (n + n + 1)) % 2 == 0)
+                cnt2++;
+        }
+        else {
+            t = 'O';
+            cnt = 0;
+            if(s[i] != t) {
+                t = s[i];
+                cnt++;
+            }
+        }
     }
-    cout << cnt;
+    cout << cnt2;
 }
