@@ -6,30 +6,19 @@ class Solution {
 
         while(l <= r) {
             if(sum < k) {
-                r++;
-                if(r >= sequence.length)
+                if(++r >= sequence.length)
                     break;
                 sum += sequence[r];
             }
             else if(sum > k) {
-                if(l < r) {
-                    sum -= sequence[l];
-                    l++;
-                }
-                else {
-                    r++;
-                    if(r >= sequence.length)
-                        break;
-                    sum += sequence[r];
-                }
+                    sum -= sequence[l++];
             }
             else if(sum == k) {
                 if(answer[1] - answer[0] > r - l) {
                     answer[0] = l;
                     answer[1] = r;
                 }
-                sum -= sequence[l];
-                l++;
+                sum -= sequence[l++];
             }
         }
         
