@@ -5,10 +5,10 @@ class Solution {
     
     public void bfs(int[][] land, boolean[][] v, int y, int x, int r, int c) {
         Queue<int[]> q = new LinkedList<>();
+        Set<Integer> set = new HashSet<>();
         int[] dy = {-1, 0, 1, 0};
         int[] dx = {0, -1, 0, 1};
         int count = 1;
-        Set<Integer> set = new HashSet<>();
         
         q.add(new int[]{y, x});
         v[y][x] = true;
@@ -27,9 +27,9 @@ class Solution {
                 q.add(new int[]{ny, nx});
                 v[ny][nx] = true;
                 count++;
-                
             }
         }
+        
         for (int id : set) {
             cnt[id] += count;
         }
@@ -47,6 +47,7 @@ class Solution {
             }
         }
         answer = Arrays.stream(cnt).max().getAsInt();
+        
         return answer;
     }
 }
