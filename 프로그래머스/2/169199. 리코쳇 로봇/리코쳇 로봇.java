@@ -2,8 +2,9 @@ import java.util.*;
 
 class Solution {
     static int r, c;
+    static int[][] v;
     
-    public int find(String[] board, int[][] v, int y, int x) {
+    public int find(String[] board, int y, int x) {
         Queue<int[]> q = new LinkedList<>();
         int[] dy = { 1, 0, -1, 0 };
         int[] dx = { 0, 1, 0, -1 };
@@ -45,12 +46,12 @@ class Solution {
         int answer = 0;
         r = board.length;
         c = board[0].length();
-        int[][] v = new int[r][c];
+        v = new int[r][c];
         
         for(int i = 0; i < r; i++) {
             for(int j = 0; j < c; j++) {
                 if(board[i].charAt(j) == 'R') {
-                    answer = find(board, v, i, j);
+                    answer = find(board, i, j);
                     break;
                 }
             }
