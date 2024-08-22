@@ -2,7 +2,7 @@ import java.util.*;
 
 class Solution {
     public int[] solution(String[] operations) {
-        PriorityQueue<Integer> qa= new PriorityQueue<>();
+        PriorityQueue<Integer> qa = new PriorityQueue<>();
         PriorityQueue<Integer> qd = new PriorityQueue<>(Collections.reverseOrder());
         int[] answer = {};
         
