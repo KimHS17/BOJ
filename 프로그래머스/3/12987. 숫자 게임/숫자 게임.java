@@ -8,7 +8,7 @@ class Solution {
         Arrays.sort(A);
         Arrays.sort(B);
         
-        for(int i = A.length - 1; i >=0; i--) {
+        for(int i = A.length - 1; i >= 0; i--) {
             if(A[i] < B[id]) {
                 answer++;
                 id--;
