@@ -7,6 +7,10 @@ class Solution {
         
         Arrays.sort(works);
         for(int i = 0; i < n; i++) {
+            if(works[0] == 0) {
+                return 0;
+            }
+            
             if(id > 0 && works[id] < works[id - 1]) {
                 id--;
             }
