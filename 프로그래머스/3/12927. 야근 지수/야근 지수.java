@@ -23,8 +23,7 @@ class Solution {
             }
         }
         
-        for(long w: works) {
-            System.out.print(w + " ");
+        for(int w: works) {
             answer += w * w;
         }
         
