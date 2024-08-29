@@ -7,7 +7,7 @@ class Solution {
         
         Arrays.sort(works);
         for(int i = 0; i < n; i++) {
-            while(id > 0 && works[id] < works[id - 1]) {
+            if(id > 0 && works[id] < works[id - 1]) {
                 id--;
             }
             while(id < works.length - 1 && works[id + 1] >= works[id]) {
