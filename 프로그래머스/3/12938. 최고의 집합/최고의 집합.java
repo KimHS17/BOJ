@@ -11,10 +11,8 @@ class Solution {
         if(q == 0) {
             return new int[]{-1};
         }
-        Arrays.fill(answer, q);
-        for(int i = n - r; i < n; i++) {
-            answer[i]++;
-        }
+        Arrays.fill(answer, 0, n - r, q);
+        Arrays.fill(answer, n - r, n, q + 1);
         
         return answer;
     }
