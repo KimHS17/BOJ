@@ -29,9 +29,8 @@ class Solution {
         List<String> keySet = new ArrayList<>(time.keySet());
         keySet.sort((o1, o2) -> o1.compareTo(o2));
         for(String key: keySet) {
-            Long m = time.get(key);
+            Long m = time.get(key) - fees[0];
             int fee = fees[1];
-            m -= fees[0];
             if(m > 0) {
                 fee += m / fees[2] * fees[3];
                 if(m % fees[2] > 0)
