@@ -34,7 +34,6 @@ class Solution {
                 check[i] = false;
             }
         }
-
 	}
     
     public int solution(String numbers) {
@@ -52,6 +51,5 @@ class Solution {
         }
         
         return answer;
-  
     }
 }
