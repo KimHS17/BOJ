@@ -14,12 +14,10 @@ class Solution {
             if(x > 0 && wall[y][x - 1] >= 2)
                 return true;
         } else { // 보 설치
-            if(wall[y - 1][x] % 2 == 1 || wall[y - 1][x + 1] % 2 == 1) {
+            if(wall[y - 1][x] % 2 == 1 || wall[y - 1][x + 1] % 2 == 1)
                 return true;
-            }
-            if((x > 0 && wall[y][x - 1] >= 2) && (x < n - 1 && wall[y][x + 1] >= 2)) {
+            if((x > 0 && wall[y][x - 1] >= 2) && (x < n - 1 && wall[y][x + 1] >= 2))
                 return true;
-            }
         }
         
         return false;
@@ -27,28 +25,21 @@ class Solution {
     
     public boolean remove(int n, int kind, int y, int x) {
         if(kind == 0) { // 기둥 삭제
-            if(y < n - 1 && wall[y + 1][x] % 2 == 1 && !install(n, 0, y + 1, x)) { // 위쪽 기둥
+            if(y < n - 1 && wall[y + 1][x] % 2 == 1 && !install(n, 0, y + 1, x)) // 위쪽 기둥
                 return false;
-            }
-            if(x > 0 && wall[y + 1][x - 1] >= 2 && !install(n, 1, y + 1, x - 1)) { // 왼쪽 보
+            if(x > 0 && wall[y + 1][x - 1] >= 2 && !install(n, 1, y + 1, x - 1)) // 왼쪽 보
                 return false;
-            }
-            if(x < n && wall[y + 1][x] >= 2 && !install(n, 1, y + 1, x)) { // 오른쪽 보
+            if(x < n && wall[y + 1][x] >= 2 && !install(n, 1, y + 1, x)) // 오른쪽 보
                 return false;
-            }
         } else { // 보 삭제
-            if(y < n && wall[y][x] % 2 == 1 && !install(n, 0, y, x)) { // 왼쪽 기둥
+            if(y < n && wall[y][x] % 2 == 1 && !install(n, 0, y, x)) // 왼쪽 기둥
                 return false;
-            }
-            if(y < n && wall[y][x + 1] % 2 == 1 && !install(n, 0, y, x + 1)) { // 오른쪽 기둥
+            if(y < n && wall[y][x + 1] % 2 == 1 && !install(n, 0, y, x + 1)) // 오른쪽 기둥
                 return false;
-            }
-            if(x > 0 && wall[y][x - 1] >= 2 && !install(n, 1, y, x - 1)) { // 왼쪽 보
+            if(x > 0 && wall[y][x - 1] >= 2 && !install(n, 1, y, x - 1)) // 왼쪽 보
                 return false;
-            }
-            if(x < n - 1 && wall[y][x + 1] >= 2 && !install(n, 1, y, x + 1)) { // 오른쪽 보
+            if(x < n - 1 && wall[y][x + 1] >= 2 && !install(n, 1, y, x + 1)) // 오른쪽 보
                 return false;
-            }
         }
         
         return true;
