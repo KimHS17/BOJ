@@ -6,7 +6,6 @@ class Solution {
         int[] w = new int[weaks * 2];
         int answer = Integer.MAX_VALUE;
         
-        Arrays.sort(dist);
         for(int i = 0; i < weaks; i++) {
             w[i] = weak[i];
             w[i + weaks] = weak[i] + n;
