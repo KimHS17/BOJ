@@ -10,9 +10,6 @@ public class Main {
         int[] dy = { 0, 1, 0, -1 };
         int[] dx = { 1, 0, -1, 0 };
 
-        if(board[y][x] == 2)
-            return;
-
         q.add(new int[]{y, x});
         board[y][x] = 2;
 
@@ -58,7 +55,8 @@ public class Main {
             }
 
             for(int i = 0; i < tmp.size(); i++) {
-                check(tmp.get(i)[0], tmp.get(i)[1]);
+                if(board[tmp.get(i)[0]][tmp.get(i)[1]] == 1)
+                    check(tmp.get(i)[0], tmp.get(i)[1]);
             }
 
             time++;
