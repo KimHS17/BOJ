@@ -38,7 +38,6 @@ public class Main {
                 if(map[ny][nx] == '.') {
                     q.add(new Node(ny, nx));
                 } else if(map[ny][nx] == '$') {
-                    map[ny][nx] = '.';
                     q.add(new Node(ny, nx));
                     cnt++;
                 } else if(map[ny][nx] >= 'A' && map[ny][nx] <= 'Z') {
@@ -56,10 +55,8 @@ public class Main {
                         keys[key] = true;
                         for(Node door: doors[key]) {
                             q.add(door);
-
                         }
                     }
-
                     q.add(new Node(ny, nx));
                 }
                 
